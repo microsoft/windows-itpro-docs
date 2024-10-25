@@ -111,6 +111,10 @@ You can either set your Connected Cache IP address or FQDN using:
 
    :::image type="content" source="./images/ent-mcc-group-policy-hostname.png" alt-text="Screenshot of the Group Policy editor showing the Cache Server Hostname Group Policy setting." lightbox="./images/ent-mcc-group-policy-hostname.png":::
 
+#### DHCP Option 235
+
+To dynamically assign one or more Connected Cache hosts you can configure a custom DHCP option 235 to specify a comma-delimited list of host FQDNs or IP addresses. You must then configure a policy to apply to PCs that configures the DOCacheHostSource policy. For for information see [Delivery Optimization reference](/windows/deployment/do/waas-delivery-optimization-reference#cache-server-hostname-source).
+
 ## Verify content using the DO client
 
 To verify that the Delivery Optimization client can download content using Connected Cache, you can use the following steps:
