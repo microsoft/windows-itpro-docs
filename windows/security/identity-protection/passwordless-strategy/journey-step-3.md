@@ -72,20 +72,8 @@ Modify the **userId** variable of the script to match your environment (first li
 ```azurepowershell-interactive
 $userId = "<UPN of the user>"
 
-function Generate-RandomPassword{
-    [CmdletBinding()]
-    param (
-      [int]$Length = 64
-    )
-  $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{};:,.<>/?\|`~"
-  $random = New-Object System.Random
-  $password = ""
-  for ($i = 0; $i -lt $Length; $i++) {
-    $index = $random.Next(0, $chars.Length)
-    $password += $chars[$index]
-  }
-  return $password
-}
+$Password = (New-Guid).Guid
+$Password
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 Install-Module Microsoft.Graph -Scope CurrentUser
@@ -95,7 +83,7 @@ Connect-MgGraph -Scopes "UserAuthenticationMethod.ReadWrite.All" -NoWelcome
 $passwordParams = @{
  UserId = $userId
  AuthenticationMethodId = "28c10230-6103-485e-b985-444c60001490"
- NewPassword = Generate-RandomPassword
+ NewPassword = $Password
 }
 
 Reset-MgUserAuthenticationMethodPassword @passwordParams
@@ -106,22 +94,10 @@ A similar script can be used to reset the password against Active Directory. Mod
 ```PowerShell
 $samAccountName = <sAMAccountName of the user>
 
-function Generate-RandomPassword{
-    [CmdletBinding()]
-    param (
-      [int]$Length = 64
-    )
-  $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{};:,.<>/?\|`~"
-  $random = New-Object System.Random
-  $password = ""
-  for ($i = 0; $i -lt $Length; $i++) {
-    $index = $random.Next(0, $chars.Length)
-    $password += $chars[$index]
-  }
-  return $password
-}
+$Password = (New-Guid).Guid
+$Password
 
-$NewPassword = ConvertTo-SecureString -String (Generate-RandomPassword) -AsPlainText -Force
+$NewPassword = ConvertTo-SecureString -String ($Password) -AsPlainText -Force
 
 Set-ADAccountPassword -identity $userId -NewPassword $NewPassword -Reset
 ```
