@@ -13,6 +13,75 @@ ms.date: 01/18/2024
 <!-- Add any additional information about this policy here. Anything outside this section will get overwritten. -->
 <!-- DeviceGuard-Editable-End -->
 
+<!-- MachineIdentityIsolation-Begin -->
+## MachineIdentityIsolation
+
+<!-- MachineIdentityIsolation-Applicability-Begin -->
+| Scope | Editions | Applicable OS |
+|:--|:--|:--|
+| ✅ Device <br> ❌ User |  ✅ Enterprise <br> | ✅ Windows 11, version [26100.3011] and later |
+<!-- MachineIdentityIsolation-Applicability-End -->
+
+<!-- MachineIdentityIsolation-OmaUri-Begin -->
+```Device
+./Device/Vendor/MSFT/Policy/Config/DeviceGuard/MachineIdentityIsolation
+```
+<!-- MachineIdentityIsolation-OmaUri-End -->
+
+<!-- MachineIdentityIsolation-Description-Begin -->
+<!-- Description-Source-DDF-Forced -->
+Machine Identity Isolation configuration: 0 - Disabled, 1 - Enabled in Audit Mode, 2 - Enabled in Enforcement Mode.
+<!-- MachineIdentityIsolation-Description-End -->
+
+<!-- MachineIdentityIsolation-Editable-Begin -->
+<!-- Add any additional information about this policy here. Anything outside this section will get overwritten. -->
+
+When disabled, the machine password is only LSASS-bound and stored in $MACHINE.ACC registry key. When enabled in Audit Mode, the machine password will be LSASS-bound and IUM-bound. When enabled in Enforcement Mode, the machine password will only be IUM-bound and stored in $MACHINE.ACC.IUM registry key.
+
+For more information, see [Credential Guard protected machine accounts](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/delegated-managed-service-accounts/credential-guard-protected-machine-accounts?source=recommendations)
+
+<!-- MachineIdentityIsolation-Editable-End -->
+
+<!-- MachineIdentityIsolation-DFProperties-Begin -->
+**Description framework properties**:
+
+| Property name | Property value |
+|:--|:--|
+| Format | `int` |
+| Access Type | Add, Delete, Get, Replace |
+| Default Value  | 0 |
+<!-- MachineIdentityIsolation-DFProperties-End -->
+
+<!-- MachineIdentityIsolation-AllowedValues-Begin -->
+**Allowed values**:
+
+| Value | Description |
+|:--|:--|
+| 0 (Default) | Configurable by Administrative user. |
+| 1 | Enabled in Audit Mode. |
+| 2 | Enabled in Enforcement Mode. |
+<!-- MachineIdentityIsolation-AllowedValues-End -->
+
+<!-- MachineIdentityIsolation-GpMapping-Begin -->
+**Group policy mapping**:
+
+| Name | Value |
+|:--|:--|
+| Name | VirtualizationBasedSecurity |
+| Friendly Name | Turn On Virtualization Based Security |
+| Element Name | Enable Machine Identity Protection. |
+| Location | Computer Configuration |
+| Path | System > Device Guard |
+| Registry Key Name | SOFTWARE\Policies\Microsoft\Windows\DeviceGuard |
+| ADMX File Name | DeviceGuard.admx |
+<!-- MachineIdentityIsolation-GpMapping-End -->
+
+<!-- MachineIdentityIsolation-Examples-Begin -->
+<!-- Add any examples for this policy here. Examples outside this section will get overwritten. -->
+<!-- MachineIdentityIsolation-Examples-End -->
+
+<!-- MachineIdentityIsolation-End -->
+
 <!-- ConfigureSystemGuardLaunch-Begin -->
 ## ConfigureSystemGuardLaunch
 
