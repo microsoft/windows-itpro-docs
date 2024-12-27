@@ -22,7 +22,7 @@ sections:
           Windows Autopatch is a service that removes the need for organizations to plan and operate the update process. Windows Autopatch moves the burden from your IT to Microsoft. Windows Autopatch uses [Windows Update for Business](/windows/deployment/update/waas-manage-updates-wufb) and other service components to update devices. Both are part of [Windows Enterprise E3+ and F3](../prepare/windows-autopatch-prerequisites.md#more-about-licenses).
       - question: Is Windows 365 for Enterprise supported with Windows Autopatch?
         answer: |
-          Windows Autopatch supports Windows 365 for Enterprise. Windows 365 for Business isn't supported.
+          Windows Autopatch supports Windows 365 for Enterprise. The Business edition (Windows 365 for Business) isn't supported.
       - question: Will Windows Autopatch support local domain join Windows 10?
         answer: |
           Windows Autopatch doesn't support local (on-premises) domain join. Windows Autopatch supports [Microsoft Hybrid Entra join](/entra/identity/devices/concept-hybrid-join) or [Microsoft Entra join](/entra/identity/devices/concept-directory-join). 
