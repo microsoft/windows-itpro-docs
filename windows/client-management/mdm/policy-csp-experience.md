@@ -1078,9 +1078,9 @@ Prior to Windows 10, version 1803, this policy had User scope. This policy allow
 <!-- Description-Source-DDF -->
 Specifies whether to turn off all Windows spotlight features at once.
 
-- If you enable this policy setting, Windows spotlight on lock screen, Windows Tips, Microsoft consumer features and other related features will be turned off. You should enable this policy setting if your goal is to minimize network traffic from target devices.
+- If you Block this policy setting, Windows spotlight on lock screen, Windows Tips, Microsoft consumer features and other related features will be turned off. You should Block this policy setting if your goal is to minimize network traffic from target devices.
 
-- If you disable or don't configure this policy setting, Windows spotlight features are allowed and may be controlled individually using their corresponding policy settings. Most restricted value is 0.
+- If you Allow or don't configure this policy setting, Windows spotlight features are allowed and may be controlled individually using their corresponding policy settings. Most restricted value is 0.
 <!-- AllowWindowsSpotlight-Description-End -->
 
 <!-- AllowWindowsSpotlight-Editable-Begin -->
@@ -1102,7 +1102,7 @@ Specifies whether to turn off all Windows spotlight features at once.
 
 | Value | Description |
 |:--|:--|
-| 0 | Not allowed. |
+| 0 | Block |
 | 1 (Default) | Allowed. |
 <!-- AllowWindowsSpotlight-AllowedValues-End -->
 
