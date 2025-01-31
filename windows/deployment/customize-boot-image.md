@@ -965,7 +965,7 @@ The `winpe.wim` boot image from the Windows ADK should be updated because if `bo
 
 > [!IMPORTANT]
 >
-> Never manually update the `boot.<package_id>.wim` boot image. In addition to facing the same issues when manually updating the `boot.wim` boot image,  the `boot.<package_id>.wim` boot image will also face additional issues such as:
+> Make sure not to manually update the `boot.<package_id>.wim` boot image. In addition to facing the same issues when manually updating the `boot.wim` boot image,  the `boot.<package_id>.wim` boot image will also face additional issues such as:
 >
 > - Any time any changes are done to the boot image (adding drivers, enabling the command prompt, etc.), any manual changes done to the boot image, including the cumulative update, will be lost.
 >
