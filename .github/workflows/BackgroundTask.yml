@@ -1,8 +1,9 @@
-name: Background tasks
 
-permissions:
+name: Background settings
+
+permissions: 
   pull-requests: write
-  contents: read
+  contents: in 
   
 on:
   pull_request_target:
